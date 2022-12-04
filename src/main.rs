@@ -23,6 +23,12 @@ fn main() -> Result<()> {
                 _ = rdr.seek(std::io::SeekFrom::Start(0))?;
                 println!("\tPart 2: {}", aoc22::day2::part2(rdr)?);
             }
+            "3" => {
+                let mut rdr = BufReader::new(File::open("data/day3.txt")?);
+                println!("\tPart 1: {}", aoc22::day3::part1(&mut rdr)?);
+                _ = rdr.seek(std::io::SeekFrom::Start(0))?;
+                println!("\tPart 2: {}", aoc22::day3::part2(rdr)?);
+            }
             _ => {
                 panic!("unsupported day");
             }
